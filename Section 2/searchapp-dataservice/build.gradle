@@ -1,0 +1,65 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.0.RC1'
+	}
+	repositories {
+		mavenCentral()
+		mavenLocal()
+		maven { url "https://repo.spring.io/snapshot" }
+		maven { url "https://repo.spring.io/milestone" }
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath group: 'org.hibernate.gradle.tools',
+				name: 'hibernatetools-gradle-plugin',
+				version: '1.2.5-CUSTOM'
+	}
+}
+
+
+/* use only when upstream plugin gets fixed
+plugins {
+    id "org.hibernate.gradle.tools" version "1.2.5"
+}
+*/
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: "org.hibernate.gradle.tools"
+
+group = 'com.packt.sb5be.searchapp'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+	mavenLocal()
+	maven { url "https://repo.spring.io/snapshot" }
+	maven { url "https://repo.spring.io/milestone" }
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+	compile 'org.hibernate:hibernate-core'
+	compile 'org.apache.httpcomponents:httpclient'
+	runtime 'mysql:mysql-connector-java'
+	runtime 'org.springframework.boot:spring-boot-devtools'
+}
+
+import org.hibernate.gradle.tools.Schema
+
+database{
+	basePackage = "com.packt.sb5be.searchapp.dataservice.dbmodel.orm"
+	url = "jdbc:mysql://localhost"
+	dialect = "org.hibernate.dialect.MySQL5Dialect"
+	catalog = ["searchapp" : new Schema("searchapp",".*")]
+	user = "searchapp_user"
+	password = "dbuser123"
+}
+
