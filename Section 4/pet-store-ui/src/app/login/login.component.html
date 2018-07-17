@@ -1,0 +1,20 @@
+<h2>Login Form</h2>
+<div *ngIf="loginError" class="alert alert-danger" role="alert">
+  The credentials are incorrect!
+</div>
+<form [formGroup]="loginForm" (ngSubmit)="submitLoginForm()">
+  <div class="form-group">
+    <label class="center-block">Email:
+      <input class="form-control" formControlName="email">
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="center-block">Password:
+      <input type="password" class="form-control" formControlName="password">
+    </label>
+  </div>
+  <div style="margin-bottom: 1em">
+    <button type="submit" class="btn btn-success" [disabled]="!loginForm.valid">Login</button> &nbsp;
+    <button (click)="redirectToSignUp()" type="button" class="btn btn-primary">Sign Up</button> &nbsp;
+  </div>
+</form>

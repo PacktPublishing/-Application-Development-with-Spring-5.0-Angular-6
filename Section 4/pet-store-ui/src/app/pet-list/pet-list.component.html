@@ -1,0 +1,9 @@
+<h1>Pets Available</h1>
+<ul>
+  <li *ngFor="let pet of pets">
+    <h4>{{ pet.name }}</h4>
+    <img src="{{ pet.pictureUrl }}" height="500" width="500">
+    Cost: {{ pet.cost / 100 | currency:'USD' }} <br/>
+    Number in stock: {{ pet.numberInStock }}
+  </li>
+</ul>
