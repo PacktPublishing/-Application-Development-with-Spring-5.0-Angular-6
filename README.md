@@ -9,10 +9,11 @@ By the end of the course, you'll be able to develop your own application using t
 <H2>What You Will Learn</H2>
 <DIV class=book-info-will-learn-text>
 <UL>
-<LI>Build microservices with Spring Boot 
-<LI>Use Spring Cloud to deploy and manage applications on the Cloud 
-<LI>Get to know the advanced features of Spring Boot in order to effectively develop and monitor applications 
-<LI>Get to know the best practices when developing applications with the Spring Framework </LI></UL></DIV>
+• Use the features of Spring 5.0 and Spring Boot with Java<br/>
+• Test your code with JUnit 5.0<br/>
+• Use Spring WebFlux and various other features<br/>
+• Work with AngularJS to develop the front end<br/>
+• Use Angular 6 and its features </LI></UL></DIV>
 
 ## Instructions and Navigation
 ### Assumed Knowledge
