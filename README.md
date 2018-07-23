@@ -18,7 +18,7 @@ By the end of the course, you'll be able to develop your own application using t
 ## Instructions and Navigation
 ### Assumed Knowledge
 To fully benefit from the coverage included in this course, you will need:<br/>
-empty
+This course is for Java Developers who are looking to adopt Spring for their wholesome development needs. Basic knowledge of Java programming is assumed.
 ### Technical Requirements
 Main requirements are to be able to run Eclipse or IntelliJ and MongoDB.<br/>
 Minimum Hardware Requirements:<br/>
